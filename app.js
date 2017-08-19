@@ -9,6 +9,7 @@ var index = require('./routes/index');
 var products = require('./routes/products');
 var doctor = require('./routes/doctor');
 var specialization = require('./routes/specialization');
+var location = require('./routes/location');
 
 var app = express();
 
@@ -30,7 +31,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/api', index);
 app.use('/api/products', products);
 app.use('/api/doctors', doctor);
-app.use('/api/specializations', specialization );
+app.use('/api/specializations', specialization);
+app.use('/api/locations', location);
 
 // app.use(cors());
 // app.all('*', function(req, res) {
