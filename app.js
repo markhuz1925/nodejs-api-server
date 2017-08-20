@@ -14,6 +14,8 @@ var cors = require('cors');
 var index = require('./routes/index');
 var doctor = require('./routes/doctor');
 var specialization = require('./routes/specialization');
+var location = require('./routes/location');
+var hospital = require('./routes/hospital');
 
 var app = express();
 
@@ -36,7 +38,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/api', index);
 app.use('/api/doctors', doctor);
-app.use('/api/specializations', specialization );
+app.use('/api/specializations', specialization);
+app.use('/api/locations', location);
+app.use('/api/hospitals', hospital);
 
 // app.use(cors());
 // app.all('*', function(req, res) {
