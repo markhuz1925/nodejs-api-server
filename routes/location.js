@@ -18,4 +18,16 @@ router.get('/:id?', function(req, res, next) {
     });
 });
 
+router.get('/:location?/doctors', function(req, res, next) {
+    if(req.params.location) {
+        location.getDoctorsByLocation(req.params.location, function(err, rows) {
+            if(err) {
+                res.json(err);
+            } else {
+                res.json(rows);
+            }
+        });
+    }
+});
+
 module.exports = router;
