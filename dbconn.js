@@ -1,9 +1,9 @@
 var mysql = require('mysql');
 var conn = mysql.createPool({
-	host: '',
-	user: '',
-	password: '',
-	database: ''
+	host: 'localhost',
+	user: 'root',
+	password: 'password',
+	database: 'filipinokliniko'
 });
 
 module.exports = conn;
