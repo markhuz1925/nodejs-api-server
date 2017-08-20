@@ -1,12 +1,17 @@
+/* express js */
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
+
+/* security */
+var helmet = require('helmet');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var cors = require('cors');
+
+/* Routing */
 var index = require('./routes/index');
-var products = require('./routes/products');
 var doctor = require('./routes/doctor');
 var specialization = require('./routes/specialization');
 var location = require('./routes/location');
@@ -18,6 +23,8 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
+// security setup
+app.use(helmet());
 app.use(cors());
 app.options('*', cors());
 
@@ -30,7 +37,6 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/api', index);
-app.use('/api/products', products);
 app.use('/api/doctors', doctor);
 app.use('/api/specializations', specialization);
 app.use('/api/locations', location);
