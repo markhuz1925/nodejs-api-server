@@ -16,6 +16,7 @@ var doctor = require('./routes/doctor');
 var specialization = require('./routes/specialization');
 var location = require('./routes/location');
 var hospital = require('./routes/hospital');
+var article = require('./routes/article');
 
 var app = express();
 
@@ -41,6 +42,7 @@ app.use('/api/doctors', doctor);
 app.use('/api/specializations', specialization);
 app.use('/api/locations', location);
 app.use('/api/hospitals', hospital);
+app.use('/api/articles', article);
 
 // app.use(cors());
 // app.all('*', function(req, res) {
