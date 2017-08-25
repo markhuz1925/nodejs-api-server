@@ -7,7 +7,7 @@ var article = {
 
         return http.get({
             host: 'www.medicalnewstoday.com',
-            path: '/articles/319050.php'
+            path: url
         }, function(response) {
             // Continuously update stream with data
             var content = '';
